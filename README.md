@@ -33,6 +33,6 @@ flukit:  UI组件库
 
 ## 运行的一些截图
 
-![home](./imgs/home.jpg)
-![menu](./imgs/menu.jpg)
-![ios-home](./imgs/ios-home.jpg)
+![home](imgs/home.jpg)
+![menu](imgs/menu.jpg)
+![ios-home](imgs/ios-home.jpg)
