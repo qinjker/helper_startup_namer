@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:bot_toast/bot_toast.dart';
+
 import '../common/global.dart';
 import '../i10n/gmLocalizationsDelegate.dart';
 import '../models/user.dart';
@@ -96,7 +97,6 @@ class _LoginRouteState extends State<LoginRoute> {
   void _onLogin() async {
     // 提交前，先验证各个表单字段是否合法
     if ((_formKey.currentState as FormState).validate()) {
-//      showLoading(context);
 //      BotToast.showLoading();
       User user;
       try {
@@ -105,11 +105,11 @@ class _LoginRouteState extends State<LoginRoute> {
         Provider.of<UserModel>(context, listen: false).user = user;
       } catch (e) {
         //登录失败则提示
+
         if (e.response?.statusCode == 401) {
-//          BotToast.showText(text: GmLocalizations.of(context).userNameOrPasswordWrong);
-//          showToast();
+          BotToast.showText(text: GmLocalizations.of(context).userNameOrPasswordWrong);
         } else {
-//          BotToast.showText(text: e.toString());
+          BotToast.showText(text: e.toString());
 //          showToast(e.toString());
         }
       } finally {

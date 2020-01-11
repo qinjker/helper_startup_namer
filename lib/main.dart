@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer2<ThemeModel, LocaleModel>(
         builder: (BuildContext context, themeModel, localeModel, Widget child) {
-          return MaterialApp(
+          return BotToastInit(child: MaterialApp(
             theme: ThemeData(
               primarySwatch: themeModel.theme,
             ),
@@ -80,7 +80,8 @@ class MyApp extends StatelessWidget {
               "themes": (context) => ThemeChangeRoute(),
               "language": (context) => LanguageRoute(),
             },
-          );
+          ));
+
         },
       ),
     );
